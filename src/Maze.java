@@ -147,6 +147,16 @@ public class Maze {
      */
     public boolean isValidCell(int row, int col) {
         // TODO: Complete this function
+        // Make sure the cell is in the grid
+        if (row < 0 || col < 0 || row >= numRows || col >= numCols)
+        {
+            return false;
+        }
+        // Check if valid cell
+        if (this.getCell(row, col).isExplored() || this.getCell(row,col).isWall())
+        {
+            return false;
+        }
         return true;
     }
 }
